@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+</head>
+<body>
+
+</body>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'htmlapp:save'  %}" method="post">
+{% csrf_token %}
+<table>
+    <thead>
+    <td>Header</td>
+    <td>Value</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Username </td>
+        <td><input type="text" name="username" id="txtUsername"> </td>
+    </tr>
+    <tr>
+        <td>Password </td>
+        <td><input type="text" name="password" id="txtPassword"> </td>
+    </tr>
+    <tr>
+        <td>EmailID </td>
+        <td><input type="text" name="emailid" id="txtEmailID"> </td>
+    </tr>
+    </tbody>
+
+</table>
+<input type="submit" value="Create" />
+</form>
+</html>

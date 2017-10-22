@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <script>
+        var List = function(){
+  window.location="http://localhost:8000/app";
+        }
+
+        var Add = function(){
+  window.location="http://localhost:8000/app/create/";
+        }
+    </script>
+</head>
+<body>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<h1>Welcome {{ splituser.username }},</h1>
+
+Information as follows :</br>
+
+<div> Username : {{splituser.username}}</div></br>
+<div> EmailID : {{splituser.emailid}}</div></br>
+<div> CreatedOn : {{splituser.createdon}}</div></br>
+
+<input type="button" value="Add" onclick="Add()" />
+<input type="button" value="List" onclick="List()" />
+</body>
+</html>
